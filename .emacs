@@ -48,21 +48,29 @@
   ;; http://www.mail-archive.com/help-gnu-emacs@gnu.org/msg03577.html
  ))
 
+(defun add-path (name)
+  (add-to-list 'load-path (concat "~/.emacs.d/" name)))
+
+(defun add-require (name)
+  (add-path (symbol-name name))
+  (require name))
+
+(add-path "")
 
 ;;; rinari - IDE for ruby/rails
-(add-to-list 'load-path "~/repos/rinari")
-;(require 'rinari)
+(add-path "rinari/util/jump")
+(require 'jump)
+(add-path "rinari/util/inf-ruby")
+(require 'inf-ruby)
+(add-require 'rinari)
 
 ;;; paredit
-(add-to-list 'load-path "~/.emacs.d/")
 (require 'paredit)
 
 ;;; Clojure
-(add-to-list 'load-path "~/.emacs.d/clojure-mode")
-(require 'clojure-mode)
-
+(add-require 'clojure-mode)
 ;;; nREPL
-(add-to-list 'load-path "~/.emacs.d/nrepl.el")
+(add-path "nrepl.el")
 (require 'nrepl)
 (require 'clojure-test-mode)
 

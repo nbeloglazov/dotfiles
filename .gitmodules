@@ -4,3 +4,9 @@
 [submodule ".emacs.d/nrepl.el"]
 	path = .emacs.d/nrepl.el
 	url = git://github.com/kingtim/nrepl.el.git
+[submodule ".emacs.d/rinari"]
+	path = .emacs.d/rinari
+	url = git://github.com/eschulte/rinari.git
+[submodule ".emacs.d/inf-ruby"]
+	path = .emacs.d/inf-ruby
+	url = git://github.com/nonsequitur/inf-ruby.git
