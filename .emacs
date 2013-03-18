@@ -54,31 +54,17 @@
 ;(require 'rinari)
 
 
-;;; clojure-mode
-(add-to-list 'load-path "~/repos/clojure-mode")
+;;; Clojure
+(add-to-list 'load-path "~/.emacs.d/clojure-mode")
 (require 'clojure-mode)
 
 ;;; nREPL
-(add-to-list 'load-path "~/repos/nrepl.el")
+(add-to-list 'load-path "~/.emacs.d/nrepl.el")
 (require 'nrepl)
 (require 'clojure-test-mode)
 
 
-;(defun turn-on-paredit () (paredit-mode 1))
-;(add-hook 'clojure-mode-hook 'turn-on-paredit)
-;(add-hook 'emacs-lisp-mode-hook 'turn-on-paredit)
-
-;;; Disable newline on closing parenthesis
-
-(eval-after-load 'paredit
-  '(progn
-     (define-key paredit-mode-map (kbd ")")
-       'paredit-close-parenthesis)
-     (define-key paredit-mode-map (kbd "M-)")
-       'paredit-close-parenthesis-and-newline)))
-
-
-
-
-
-
+(add-to-list 'load-path "~/.emacs.d/")
+(require 'paredit)
+(add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
