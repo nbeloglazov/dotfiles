@@ -53,6 +53,9 @@
 (add-to-list 'load-path "~/repos/rinari")
 ;(require 'rinari)
 
+;;; paredit
+(add-to-list 'load-path "~/.emacs.d/")
+(require 'paredit)
 
 ;;; Clojure
 (add-to-list 'load-path "~/.emacs.d/clojure-mode")
@@ -63,8 +66,5 @@
 (require 'nrepl)
 (require 'clojure-test-mode)
 
-
-(add-to-list 'load-path "~/.emacs.d/")
-(require 'paredit)
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
