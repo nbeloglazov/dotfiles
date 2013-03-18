@@ -48,6 +48,9 @@
   ;; http://www.mail-archive.com/help-gnu-emacs@gnu.org/msg03577.html
  ))
 
+(require 'ido)
+(ido-mode t)
+
 (defun add-path (name)
   (add-to-list 'load-path (concat "~/.emacs.d/" name)))
 
