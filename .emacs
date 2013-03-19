@@ -80,3 +80,13 @@
 
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+
+
+;;; Projectile
+(add-path "s.el")
+(require 's)
+(add-path "dash.el")
+(require 'dash)
+(add-require 'projectile)
+(setq projectile-require-project-root nil)
+

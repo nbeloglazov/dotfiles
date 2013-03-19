@@ -10,3 +10,12 @@
 [submodule ".emacs.d/inf-ruby"]
 	path = .emacs.d/inf-ruby
 	url = git://github.com/nonsequitur/inf-ruby.git
+[submodule ".emacs.d/projectile"]
+	path = .emacs.d/projectile
+	url = git://github.com/bbatsov/projectile.git
+[submodule ".emacs.d/dash.el"]
+	path = .emacs.d/dash.el
+	url = git://github.com/magnars/dash.el.git
+[submodule ".emacs.d/s.el"]
+	path = .emacs.d/s.el
+	url = git://github.com/magnars/s.el.git
