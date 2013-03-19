@@ -96,4 +96,6 @@
 (require 'dash)
 (add-require 'projectile)
 (setq projectile-require-project-root nil)
+(projectile-global-mode)
+(global-set-key  (kbd "M-p") 'projectile-find-file)
 
