@@ -100,5 +100,4 @@
 (global-set-key  (kbd "M-p") 'projectile-find-file)
 
 (global-whitespace-mode)
-(setq whitespace-style  '(spaces tabs newline space-mark tab-mark))
-
+(setq whitespace-style  '(newline space-mark tab-mark face trailing))
