@@ -19,3 +19,6 @@
 [submodule ".emacs.d/s.el"]
 	path = .emacs.d/s.el
 	url = git://github.com/magnars/s.el.git
+[submodule ".emacs.d/ido-better-flex"]
+	path = .emacs.d/ido-better-flex
+	url = git://github.com/vic/ido-better-flex.git

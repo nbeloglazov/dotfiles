@@ -8,6 +8,7 @@
 (setq-default show-trailing-whitespace t)
 (setq-default default-indicate-empty-lines t)
 (setq-default indent-tabs-mode nil)
+(setq vc-follow-symlinks t)
 
 
 ; http://hugoheden.wordpress.com/2009/03/08/copypaste-with-emacs-in-terminal/
@@ -48,15 +49,21 @@
   ;; http://www.mail-archive.com/help-gnu-emacs@gnu.org/msg03577.html
  ))
 
-(require 'ido)
-(ido-mode t)
-
 (defun add-path (name)
   (add-to-list 'load-path (concat "~/.emacs.d/" name)))
 
 (defun add-require (name)
   (add-path (symbol-name name))
   (require name))
+
+
+;;; ido
+(require 'ido)
+(ido-mode t)
+(add-require 'ido-better-flex)
+(add-hook 'ido-setup-hook
+          (lambda ()
+            (define-key ido-completion-map (kbd "TAB") 'ido-next-match)))
 
 (add-path "")
 
