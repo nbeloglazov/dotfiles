@@ -75,6 +75,7 @@
 ;;; nREPL
 (add-path "nrepl.el")
 (require 'nrepl)
+(setq nrepl-history-file "~/.repl-history")
 (require 'clojure-test-mode)
 
 (add-hook 'clojure-mode-hook 'paredit-mode)
