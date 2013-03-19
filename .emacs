@@ -40,7 +40,7 @@
     ;; kill-ring will be used.
     (let ((xsel-output (shell-command-to-string "xsel --clipboard --output")))
       (unless (string= (car kill-ring) xsel-output)
-	xsel-output )))
+        xsel-output )))
   ;; Attach callbacks to hooks
   (setq interprogram-cut-function 'xsel-cut-function)
   (setq interprogram-paste-function 'xsel-paste-function)
@@ -98,4 +98,7 @@
 (setq projectile-require-project-root nil)
 (projectile-global-mode)
 (global-set-key  (kbd "M-p") 'projectile-find-file)
+
+(global-whitespace-mode)
+(setq whitespace-style  '(spaces tabs newline space-mark tab-mark))
 
