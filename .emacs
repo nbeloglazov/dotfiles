@@ -51,7 +51,6 @@
 
 (defun add-path (name)
   (add-to-list 'load-path (concat "~/.emacs.d/" name)))
-
 (defun add-require (name)
   (add-path (symbol-name name))
   (require name))
@@ -102,3 +101,10 @@
 (global-whitespace-mode)
 (setq whitespace-style  '(newline space-mark tab-mark face trailing))
 (define-key global-map (kbd "RET") 'newline-and-indent)
+
+
+; If auctex.el is loaded then auctex is installed and load other stuff
+(when (load "auctex.el" t t t)
+;  (load "preview-latex.el" nil t t) doesnt work for me. May be it doesn't work in no-window mode at all.
+  (setq TeX-auto-save t)
+  (setq TeX-parse-self t))
