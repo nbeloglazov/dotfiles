@@ -101,3 +101,4 @@
 
 (global-whitespace-mode)
 (setq whitespace-style  '(newline space-mark tab-mark face trailing))
+(define-key global-map (kbd "RET") 'newline-and-indent)
