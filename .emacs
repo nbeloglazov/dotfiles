@@ -108,6 +108,8 @@
 ;  (load "preview-latex.el" nil t t) doesnt work for me. May be it doesn't work in no-window mode at all.
   (setq TeX-auto-save t)
   (setq TeX-parse-self t)
+  (setq TeX-PDF-mode t)
+  (setq-default TeX-master nil)
   (eval-after-load "tex"
     '(setcdr (assoc "LaTeX" TeX-command-list)
              '("%`%l%(mode) -shell-escape%' %t"
