@@ -22,3 +22,6 @@
 [submodule ".emacs.d/ido-better-flex"]
 	path = .emacs.d/ido-better-flex
 	url = git://github.com/vic/ido-better-flex.git
+[submodule ".emacs.d/lua-mode"]
+	path = .emacs.d/lua-mode
+	url = git://github.com/immerrr/lua-mode.git
