@@ -119,3 +119,6 @@
 
 ;;; Lua
 (add-require 'lua-mode)
+
+;;; Scala
+(add-require 'scala-mode2)

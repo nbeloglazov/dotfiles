@@ -25,3 +25,6 @@
 [submodule ".emacs.d/lua-mode"]
 	path = .emacs.d/lua-mode
 	url = git://github.com/immerrr/lua-mode.git
+[submodule ".emacs.d/scala-mode2"]
+	path = .emacs.d/scala-mode2
+	url = git://github.com/hvesalai/scala-mode2.git
