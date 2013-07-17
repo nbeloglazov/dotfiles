@@ -111,7 +111,9 @@
 (global-set-key  (kbd "M-p") 'projectile-find-file)
 
 (global-whitespace-mode)
-(setq whitespace-style  '(newline space-mark tab-mark face trailing))
+(setq whitespace-style  '(newline space-mark tab-mark face trailing spaces))
+(custom-set-faces
+ '(whitespace-space ((t (:foreground "black")))))
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
 
