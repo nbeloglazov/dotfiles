@@ -28,3 +28,6 @@
 [submodule ".emacs.d/scala-mode2"]
 	path = .emacs.d/scala-mode2
 	url = git://github.com/hvesalai/scala-mode2.git
+[submodule ".emacs.d/rainbow-delimiters"]
+	path = .emacs.d/rainbow-delimiters
+	url = git@github.com:jlr/rainbow-delimiters.git

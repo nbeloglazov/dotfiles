@@ -82,11 +82,22 @@
 ;;; nREPL
 (add-path "nrepl.el")
 (require 'nrepl)
+(setq nrepl-popup-stacktraces nil)
 (setq nrepl-history-file "~/.repl-history")
+(add-hook 'nrepl-interaction-mode-hook
+  'nrepl-turn-on-eldoc-mode)
 (require 'clojure-test-mode)
+
+
 
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+
+;;; Rainbow delimiters
+(add-require 'rainbow-delimiters)
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'nrepl-mode-hook 'rainbow-delimiters-mode)
+
 
 
 ;;; Projectile
