@@ -113,7 +113,7 @@
 (global-whitespace-mode)
 (setq whitespace-style  '(newline space-mark tab-mark face trailing spaces))
 (custom-set-faces
- '(whitespace-space ((t (:foreground "black")))))
+ '(whitespace-space ((t (:foreground "color-240")))))
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
 
