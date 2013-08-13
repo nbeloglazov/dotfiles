@@ -82,7 +82,7 @@
 ;;; nREPL
 (add-path "nrepl.el")
 (require 'nrepl)
-(setq nrepl-popup-stacktraces nil)
+(setq nrepl-popup-on-error nil)
 (setq nrepl-history-file "~/.repl-history")
 (add-hook 'nrepl-interaction-mode-hook
   'nrepl-turn-on-eldoc-mode)
