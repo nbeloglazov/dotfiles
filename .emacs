@@ -99,6 +99,58 @@
 (add-hook 'nrepl-mode-hook 'rainbow-delimiters-mode)
 
 
+;;; Toggle buffers for *nrepl* and *nrepl-error*
+(defvar nrepl-hidden-by-buffers '())
+(defvar nrepl-deselected-by-buffers '())
+
+(defun buffer-in-next-window ()
+  (if (one-window-p) nil
+    (buffer-name (window-buffer (next-window)))))
+
+(defun show-buffer-and-memorize-old (buffer selected)
+  (let* ((will-be-hidden-buffer (buffer-in-next-window)))
+    (add-to-list 'nrepl-hidden-by-buffers (list buffer will-be-hidden-buffer))
+    (if selected
+      (progn (add-to-list 'nrepl-deselected-by-buffers (list buffer (selected-window)))
+             (pop-to-buffer buffer nil t))
+      (display-buffer buffer))))
+
+(defun hide-buffer-and-restore-old (buffer)
+  (let* ((old (cadr (assoc buffer nrepl-hidden-by-buffers)))
+         (old-selected-window (cadr (assoc buffer nrepl-deselected-by-buffers))))
+     (assq-delete-all buffer nrepl-hidden-by-buffers)
+     (assq-delete-all buffer nrepl-deselected-by-buffers)
+     (if old
+       (replace-buffer-in-windows buffer)
+       (delete-windows-on buffer))
+     (when old-selected-window
+       (select-window old-selected-window))))
+
+(defun toggle-buffer (buffer &optional selected)
+  (interactive)
+  (if (get-buffer buffer)
+    (if (get-buffer-window buffer)
+      (hide-buffer-and-restore-old buffer)
+      (show-buffer-and-memorize-old buffer selected))
+    (message "Buffer %s doesn't exist" buffer)))
+
+(defun toggle-nrepl-buffer ()
+  (interactive)
+  (toggle-buffer "*nrepl*" t))
+
+(defun toggle-nrepl-error-buffer ()
+  (interactive)
+  (toggle-buffer "*nrepl-error*"))
+
+(defun define-toggle-keys ()
+  (local-set-key (kbd "<f1>") 'toggle-nrepl-buffer)
+  (local-set-key (kbd "<f2>") 'toggle-nrepl-error-buffer))
+
+(add-hook 'clojure-mode-hook 'define-toggle-keys)
+(add-hook 'nrepl-mode-hook 'define-toggle-keys)
+
+
+
 
 ;;; Projectile
 (add-path "s.el")
