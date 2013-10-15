@@ -77,6 +77,13 @@
 ;;; paredit
 (require 'paredit)
 
+;;; common deps
+(add-path "s.el")
+(require 's)
+(add-path "dash.el")
+(require 'dash)
+
+
 ;;; Clojure
 (add-require 'clojure-mode)
 ;;; nREPL
@@ -153,10 +160,6 @@
 
 
 ;;; Projectile
-(add-path "s.el")
-(require 's)
-(add-path "dash.el")
-(require 'dash)
 (add-require 'projectile)
 (setq projectile-require-project-root nil)
 (projectile-global-mode)
