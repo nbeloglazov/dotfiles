@@ -19,9 +19,6 @@
 [submodule ".emacs.d/s.el"]
 	path = .emacs.d/s.el
 	url = git://github.com/magnars/s.el.git
-[submodule ".emacs.d/ido-better-flex"]
-	path = .emacs.d/ido-better-flex
-	url = git://github.com/vic/ido-better-flex.git
 [submodule ".emacs.d/lua-mode"]
 	path = .emacs.d/lua-mode
 	url = git://github.com/immerrr/lua-mode.git
@@ -31,3 +28,9 @@
 [submodule ".emacs.d/rainbow-delimiters"]
 	path = .emacs.d/rainbow-delimiters
 	url = git@github.com:jlr/rainbow-delimiters.git
+[submodule ".emacs.d/flx-ido"]
+	path = .emacs.d/flx-ido
+	url = git@github.com:lewang/flx.git
+[submodule ".emacs.d/cl-lib"]
+	path = .emacs.d/cl-lib
+	url = git@github.com:emacsmirror/cl-lib.git
